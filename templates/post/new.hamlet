@@ -3,4 +3,4 @@
 <form method=post action=@{PostNewR} enctype=#{enctype}>
 ^{widget}
 
-<button class="btn btn-default">Create Post!
+<button class="btn btn-default">Create Post ! 
