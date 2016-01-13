@@ -89,6 +89,7 @@ library
                  , wai
                  , markdown
                  , yesod-text-markdown
+                 
 
 executable         myblog
     if flag(library-only)

@@ -17,7 +17,8 @@ Comment json -- Adding "json" causes ToJSON and FromJSON instances to be derived
 BlogPost
     title Text
     tags Text
+    content Html
     article Markdown
-   -- content Markdown
+    
 
  -- By default this file is used in Model.hs (which is imported by Foundation.hs)

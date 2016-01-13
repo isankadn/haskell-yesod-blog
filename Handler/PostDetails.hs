@@ -1,5 +1,4 @@
 module Handler.PostDetails where
-
 import Import
 
 getPostDetailsR :: BlogPostId -> Handler Html

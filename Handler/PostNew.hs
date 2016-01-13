@@ -2,15 +2,15 @@ module Handler.PostNew where
 
 import Import
 import Yesod.Form.Bootstrap3
---import Yesod.Form.Nic (YesodNic, nicHtmlField)
 import Yesod.Text.Markdown
-
+import Yesod.Form.Nic (YesodNic, nicHtmlField)
+instance YesodNic App
 
 blogPostForm :: AForm Handler BlogPost 
 blogPostForm = BlogPost 
             <$> areq textField (bfs ("Title" :: Text)) Nothing
             <*> areq textField (bfs ("Tags" :: Text)) Nothing
-           -- <*> areq textareaField ("Content" :: Text) Nothing
+           	<*> areq nicHtmlField (bfs ("Content" :: Text)) Nothing
             <*> areq markdownField (bfs ("Article" :: Text)) Nothing
 
 getPostNewR :: Handler Html
@@ -27,3 +27,4 @@ postPostNewR = do
               blogPostId <- runDB $ insert blogPost
               redirect $ PostDetailsR blogPostId
       _ -> defaultLayout $(widgetFile "posts/new") 
+
