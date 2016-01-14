@@ -25,6 +25,7 @@ library
                      Handler.Comment
                      Handler.PostNew
                      Handler.PostDetails
+                     Handler.Auth
 
     if flag(dev) || flag(library-only)
         cpp-options:   -DDEVELOPMENT
